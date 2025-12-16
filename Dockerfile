@@ -3,10 +3,9 @@ FROM caddy:builder AS builder
 
 # 使用 xcaddy 一次性构建包含所有所需插件的 Caddy 二进制
 RUN xcaddy build \
-    --with github.com/caddy-dns/cloudflare \
     --with github.com/caddy-dns/dnspod \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip \
-    --with github.com/fvbommel/caddy-combine-ip-ranges
+    --with github.com/caddy-dns/spaceship \
+    --with github.com/caddy-dns/cloudflare
 
 # 最终运行阶段
 FROM caddy:latest
