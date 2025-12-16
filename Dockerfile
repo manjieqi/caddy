@@ -3,7 +3,6 @@ FROM caddy:builder AS builder
 
 # 使用 xcaddy 一次性构建包含所有所需插件的 Caddy 二进制
 RUN xcaddy build \
-    --with github.com/caddy-dns/dnspod \
     --with github.com/caddy-dns/spaceship \
     --with github.com/caddy-dns/cloudflare
 
